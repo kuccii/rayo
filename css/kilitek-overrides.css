@@ -1,0 +1,23 @@
+/* Kilitek Africa Ltd. - Custom CSS Overrides */
+/* This file overrides the preview image backgrounds in the case study section */
+
+.preview-image-3 {
+    background-image: url(../img/m/pixnova-17dceabd0f9f70e051a18b443d49d8ea.jpg) !important;
+}
+
+.preview-image-4 {
+    background-image: url(../img/m/pixnova-188fc416f6a4594d4d6542e31433b73c.jpg) !important;
+}
+
+.preview-image-5 {
+    background-image: url(../img/m/pixnova-278da2691c783f8b3aff5dce529eb218.jpg) !important;
+}
+
+.preview-image-6 {
+    background-image: url(../img/m/pixnova-2c312cc2dbaaac65ea995215e7b8fefb.jpg) !important;
+}
+
+/* Override the divider image to use local image instead of external URL */
+.divider-image-10 {
+    background-image: url(../img/m/pixnova-f9fcb89e0972852a11aaaf094c546124.jpg) !important;
+}

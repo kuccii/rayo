@@ -21,3 +21,627 @@
 .divider-image-10 {
     background-image: url(../img/m/pixnova-f9fcb89e0972852a11aaaf094c546124.jpg) !important;
 }
+
+/* ============================================================================
+   KILITEK AFRICA LTD. COLOR THEME
+   ============================================================================
+   Custom color scheme inspired by water treatment industry and Kilitek's 
+   business focus on clean water solutions.
+   
+   Primary Blue: #0077BE - Deep water blue (trust, reliability)
+   Secondary Teal: #00A0B4 - Clean water teal (innovation, freshness)
+   Accent Green: #4CAF50 - Environmental green (sustainability, growth)
+   Light Blue: #B3E5FC - Clean water light (purity, clarity)
+   Dark Blue: #004D7A - Professional dark blue (expertise, depth)
+   
+   Supporting colors:
+   - White/Light backgrounds for cleanliness
+   - Subtle grays for professional look
+   ============================================================================ */
+
+:root {
+    /* Kilitek Primary Colors - Light Theme */
+    --accent--light: #0077BE !important;           /* Primary water blue */
+    --accent-rgb--light: 0, 119, 190 !important;
+    --additional--light: #00A0B4 !important;       /* Secondary teal */
+    --additional-rgb--light: 0, 160, 180 !important;
+    
+    /* Kilitek Primary Colors - Dark Theme */
+    --accent--dark: #4FC3F7 !important;            /* Lighter blue for dark mode */
+    --accent-rgb--dark: 79, 195, 247 !important;
+    --additional--dark: #26C6DA !important;         /* Lighter teal for dark mode */
+    --additional-rgb--dark: 38, 198, 218 !important;
+    
+    /* Base colors adjustments for water theme */
+    --base--light: #F8FFFE !important;             /* Very light blue-white */
+    --base-rgb--light: 248, 255, 254 !important;
+    --base-tint--light: #FFFFFF !important;
+    --base-shade--light: #E1F5FE !important;       /* Light blue tint */
+    
+    /* Supporting accent color (green for environmental focus) */
+    --kilitek-green: #4CAF50;
+    --kilitek-green-rgb: 76, 175, 80;
+    --kilitek-light-blue: #B3E5FC;
+    --kilitek-dark-blue: #004D7A;
+}
+
+/* Button and interactive elements styling with Kilitek colors */
+.btn {
+    transition: all 0.3s ease !important;
+}
+
+.btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 15px rgba(0, 119, 190, 0.3) !important;
+}
+
+/* Navigation menu enhancements */
+.main-menu__link:hover {
+    color: var(--accent--light) !important;
+}
+
+/* CTA buttons with water theme */
+.btn-primary {
+    background: linear-gradient(135deg, var(--accent--light), var(--additional--light)) !important;
+    border: none !important;
+    color: white !important;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--kilitek-dark-blue), var(--accent--light)) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(0, 119, 190, 0.4) !important;
+}
+
+/* Service cards and sections with water theme accents */
+.service-card:hover {
+    border-color: var(--accent--light) !important;
+    box-shadow: 0 10px 30px rgba(0, 119, 190, 0.15) !important;
+}
+
+/* Statistics and counter elements */
+.stats-card {
+    border-left: 4px solid var(--accent--light) !important;
+}
+
+/* Section dividers and decorative elements */
+.section-divider {
+    background: linear-gradient(90deg, transparent, var(--additional--light), transparent) !important;
+}
+
+/* Water-themed gradient overlays */
+.hero-overlay {
+    background: linear-gradient(135deg, 
+        rgba(0, 119, 190, 0.1) 0%, 
+        rgba(0, 160, 180, 0.1) 50%, 
+        rgba(76, 175, 80, 0.1) 100%) !important;
+}
+
+/* Form elements with water theme */
+.form-control:focus {
+    border-color: var(--accent--light) !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 119, 190, 0.25) !important;
+}
+
+/* Footer enhancements */
+.footer-section {
+    background: linear-gradient(135deg, #004D7A 0%, #0077BE 100%) !important;
+    color: white !important;
+}
+
+/* Team member cards */
+.team-member:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 40px rgba(0, 119, 190, 0.2) !important;
+}
+
+/* Testimonial styling */
+.testimonial-card {
+    border: 2px solid var(--kilitek-light-blue) !important;
+    background: linear-gradient(135deg, #ffffff 0%, #f8fffe 100%) !important;
+}
+
+/* Blog and content cards */
+.content-card:hover {
+    border-color: var(--additional--light) !important;
+    box-shadow: 0 12px 35px rgba(0, 160, 180, 0.15) !important;
+}
+
+/* Loading animations with water theme */
+.loader__count {
+    color: var(--accent--light) !important;
+}
+
+/* Progress bars and indicators */
+.progress-bar {
+    background: linear-gradient(90deg, var(--accent--light), var(--additional--light)) !important;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--accent--light), var(--additional--light)) !important;
+    border-radius: 10px !important;
+}
+
+/* Special water drop animation for Kilitek */
+@keyframes waterDrop {
+    0% { transform: translateY(-10px) scale(0.8); opacity: 0; }
+    50% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(10px) scale(0.8); opacity: 0; }
+}
+
+.water-drop-animation {
+    animation: waterDrop 2s ease-in-out infinite;
+}
+
+/* ============================================================================
+   KILITEK HEADING AND TITLE STYLING
+   ============================================================================
+   Beautiful color styling for titles and headings to enhance visual appeal
+   and maintain brand consistency with the water treatment theme.
+   ============================================================================ */
+
+/* Main hero titles with water gradient */
+.hero-title,
+.hero__title,
+.mxd-hero__title,
+h1.hero-title,
+h1.hero__title {
+    background: linear-gradient(135deg, var(--accent--light) 0%, var(--additional--light) 50%, var(--kilitek-green) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    font-weight: 700 !important;
+    text-shadow: none !important;
+}
+
+/* Section titles with blue gradient */
+.section-title,
+.section__title,
+.mxd-section__title,
+h2.section-title,
+h2.section__title {
+    background: linear-gradient(90deg, var(--accent--light) 0%, var(--additional--light) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    font-weight: 600 !important;
+}
+
+/* Subsection titles with teal accent */
+.subsection-title,
+.subsection__title,
+h3.subsection-title,
+h3.subsection__title {
+    color: var(--additional--light) !important;
+    font-weight: 600 !important;
+}
+
+/* Card titles with subtle blue */
+.card-title,
+.card__title,
+.service-title,
+.service__title {
+    color: var(--accent--light) !important;
+    font-weight: 600 !important;
+}
+
+/* About section titles */
+.about-title,
+.about__title {
+    background: linear-gradient(135deg, var(--kilitek-dark-blue) 0%, var(--accent--light) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+/* Service section titles */
+.services-title,
+.services__title {
+    background: linear-gradient(90deg, var(--accent--light) 0%, var(--kilitek-green) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+/* Team section titles */
+.team-title,
+.team__title {
+    background: linear-gradient(135deg, var(--additional--light) 0%, var(--kilitek-green) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+/* Project/Case study titles */
+.project-title,
+.project__title,
+.case-study-title,
+.case-study__title {
+    background: linear-gradient(90deg, var(--kilitek-dark-blue) 0%, var(--additional--light) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+/* Blog and article titles */
+.blog-title,
+.blog__title,
+.article-title,
+.article__title {
+    background: linear-gradient(135deg, var(--accent--light) 0%, var(--kilitek-green) 50%, var(--additional--light) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+/* Contact section titles */
+.contact-title,
+.contact__title {
+    background: linear-gradient(90deg, var(--kilitek-green) 0%, var(--accent--light) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+/* Statistics and counter titles */
+.stats-title,
+.stats__title,
+.counter-title,
+.counter__title {
+    color: var(--kilitek-dark-blue) !important;
+    font-weight: 700 !important;
+}
+
+/* Testimonial titles */
+.testimonial-title,
+.testimonial__title {
+    color: var(--additional--light) !important;
+    font-weight: 600 !important;
+}
+
+/* CTA section titles */
+.cta-title,
+.cta__title {
+    background: linear-gradient(135deg, var(--kilitek-green) 0%, var(--accent--light) 50%, var(--additional--light) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+/* Footer titles */
+.footer-title,
+.footer__title {
+    color: var(--kilitek-light-blue) !important;
+    font-weight: 600 !important;
+}
+
+/* Special water-themed title effects */
+.water-title {
+    position: relative !important;
+    display: inline-block !important;
+}
+
+.water-title::after {
+    content: '' !important;
+    position: absolute !important;
+    bottom: -5px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, var(--accent--light), var(--additional--light)) !important;
+    border-radius: 2px !important;
+}
+
+/* Hover effects for interactive titles */
+.interactive-title:hover {
+    transform: translateY(-2px) !important;
+    transition: all 0.3s ease !important;
+}
+
+/* Large display titles */
+.display-title,
+.display__title {
+    background: linear-gradient(135deg, var(--kilitek-dark-blue) 0%, var(--accent--light) 30%, var(--additional--light) 60%, var(--kilitek-green) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    color: transparent !important;
+    font-weight: 800 !important;
+    font-size: 3.5rem !important;
+    line-height: 1.1 !important;
+}
+
+/* Responsive title adjustments */
+@media (max-width: 768px) {
+    .display-title,
+    .display__title {
+        font-size: 2.5rem !important;
+    }
+    
+    .hero-title,
+    .hero__title {
+        font-size: 2rem !important;
+    }
+    
+    .section-title,
+    .section__title {
+        font-size: 1.8rem !important;
+    }
+}
+
+/* Responsive adjustments for mobile */
+@media (max-width: 768px) {
+    .btn:hover {
+        transform: none !important;
+        box-shadow: 0 3px 10px rgba(0, 119, 190, 0.2) !important;
+    }
+}
+
+/* ============================================================================
+   ADDITIONAL BACKGROUND IMAGE OVERRIDES
+   ============================================================================
+   Override any remaining external background images from the minified CSS
+   to use local images from the m/ folder instead of external URLs.
+   ============================================================================ */
+
+/* Override any external background images that might be in the minified CSS */
+[style*="background-image: url(https://mixdesign.dev/themeforest/rayo/"] {
+    background-image: url(../img/m/pixnova-04a8795a4adbf6ad65198422c04d4204.jpg) !important;
+}
+
+/* Specific overrides for common background image classes */
+.mxd-divider__image,
+.divider-image,
+.parallax-img {
+    background-image: url(../img/m/pixnova-f9fcb89e0972852a11aaaf094c546124.jpg) !important;
+}
+
+/* Override any hero background images */
+.mxd-hero__bg,
+.hero-bg {
+    background-image: url(../img/m/pixnova-17c359eb3251dffd9745adc1c7ecb4de.jpg) !important;
+}
+
+/* Override any section background images */
+.mxd-section__bg,
+.section-bg {
+    background-image: url(../img/m/pixnova-188fc416f6a4594d4d6542e31433b73c.jpg) !important;
+}
+
+/* Override any card background images */
+.mxd-card__bg,
+.card-bg {
+    background-image: url(../img/m/pixnova-278da2691c783f8b3aff5dce529eb218.jpg) !important;
+}
+
+/* Override any testimonial background images */
+.mxd-testimonial__bg,
+.testimonial-bg {
+    background-image: url(../img/m/pixnova-2c312cc2dbaaac65ea995215e7b8fefb.jpg) !important;
+}
+
+/* Override any CTA background images */
+.mxd-cta__bg,
+.cta-bg {
+    background-image: url(../img/m/pixnova-2c55b5d9fa43f0186a446b0f86a5c566.jpg) !important;
+}
+
+/* Override any promo background images */
+.mxd-promo__bg,
+.promo-bg {
+    background-image: url(../img/m/pixnova-31269c69ae15e3ffa8ec2cc5b54b99d7.jpg) !important;
+}
+
+/* Override any marquee background images */
+.mxd-marquee__bg,
+.marquee-bg {
+    background-image: url(../img/m/pixnova-32b398502e10406224f50755fdad5ca4.jpg) !important;
+}
+
+/* Override any portfolio background images */
+.mxd-portfolio__bg,
+.portfolio-bg {
+    background-image: url(../img/m/pixnova-3aaa2cab9e111adb451f263320f7db3e.jpg) !important;
+}
+
+/* Override any blog background images */
+.mxd-blog__bg,
+.blog-bg {
+    background-image: url(../img/m/pixnova-3c060712e225151421d42876ace4880f.jpg) !important;
+}
+
+/* Override any team background images */
+.mxd-team__bg,
+.team-bg {
+    background-image: url(../img/m/pixnova-4df44e2d4a0fff831269b29f97c9014d.jpg) !important;
+}
+
+/* Override any service background images */
+.mxd-service__bg,
+.service-bg {
+    background-image: url(../img/m/pixnova-5249cbb4885558390bcbc743e6ee519d.jpg) !important;
+}
+
+/* Override any about background images */
+.mxd-about__bg,
+.about-bg {
+    background-image: url(../img/m/pixnova-59d14237b5b67fc5d7f4aeb658c5d277.jpg) !important;
+}
+
+/* Override any contact background images */
+.mxd-contact__bg,
+.contact-bg {
+    background-image: url(../img/m/pixnova-6402b8442d9b8fa490e7e1b1ed728232.jpg) !important;
+}
+
+/* Override any footer background images */
+.mxd-footer__bg,
+.footer-bg {
+    background-image: url(../img/m/pixnova-6e773aa4f29211774229f40648a89431.jpg) !important;
+}
+
+/* Override any navigation background images */
+.mxd-nav__bg,
+.nav-bg {
+    background-image: url(../img/m/pixnova-7503d9ff69a0f1542908ae08d8ddd38d.jpg) !important;
+}
+
+/* Override any sidebar background images */
+.mxd-sidebar__bg,
+.sidebar-bg {
+    background-image: url(../img/m/pixnova-79a9f3e48b2c8441237d5cfe76f30ac1.jpg) !important;
+}
+
+/* Override any modal background images */
+.mxd-modal__bg,
+.modal-bg {
+    background-image: url(../img/m/pixnova-79ab517c8b7057fe4b63f72870d02519.jpg) !important;
+}
+
+/* Override any overlay background images */
+.mxd-overlay__bg,
+.overlay-bg {
+    background-image: url(../img/m/pixnova-878b32283399d38347d22d10d572d93c.jpg) !important;
+}
+
+/* Override any loading background images */
+.mxd-loading__bg,
+.loading-bg {
+    background-image: url(../img/m/pixnova-8a2a6e29985953edd4793e74caf21c95.jpg) !important;
+}
+
+/* Override any error background images */
+.mxd-error__bg,
+.error-bg {
+    background-image: url(../img/m/pixnova-8e2ba485fd5ca0308ca05c752011265a.jpg) !important;
+}
+
+/* Override any success background images */
+.mxd-success__bg,
+.success-bg {
+    background-image: url(../img/m/pixnova-8ec31b22576ddaebcf79155f74771a88.jpg) !important;
+}
+
+/* Override any warning background images */
+.mxd-warning__bg,
+.warning-bg {
+    background-image: url(../img/m/pixnova-9d687fef78cad02b7221c4914a891a5e.jpg) !important;
+}
+
+/* Override any info background images */
+.mxd-info__bg,
+.info-bg {
+    background-image: url(../img/m/pixnova-a6f2e6389ca83c6ad47f6e6971bd4a2c.jpg) !important;
+}
+
+/* Override any primary background images */
+.mxd-primary__bg,
+.primary-bg {
+    background-image: url(../img/m/pixnova-a9bc1fc71594dee2926a628b0d4df7b5.jpg) !important;
+}
+
+/* Override any secondary background images */
+.mxd-secondary__bg,
+.secondary-bg {
+    background-image: url(../img/m/pixnova-abf97f61692282a52dccec1c721d4b64.jpg) !important;
+}
+
+/* Override any accent background images */
+.mxd-accent__bg,
+.accent-bg {
+    background-image: url(../img/m/pixnova-ae3dfd55e001856f5bccdded2d56416e.jpg) !important;
+}
+
+/* Override any neutral background images */
+.mxd-neutral__bg,
+.neutral-bg {
+    background-image: url(../img/m/pixnova-ae9e968711800232708b66583a9dd646.jpg) !important;
+}
+
+/* Override any light background images */
+.mxd-light__bg,
+.light-bg {
+    background-image: url(../img/m/pixnova-ba65fab375bfef5ec7fb2b2575f4301c.jpg) !important;
+}
+
+/* Override any dark background images */
+.mxd-dark__bg,
+.dark-bg {
+    background-image: url(../img/m/pixnova-bf820903c3ba59db571d0ab9c65e46aa.jpg) !important;
+}
+
+/* Override any transparent background images */
+.mxd-transparent__bg,
+.transparent-bg {
+    background-image: url(../img/m/pixnova-c1baba6ff11f1ee2ae713959f27bd5f7.jpg) !important;
+}
+
+/* Override any gradient background images */
+.mxd-gradient__bg,
+.gradient-bg {
+    background-image: url(../img/m/pixnova-c4aba1e8cfeac8e4398e667128fa4eec.jpg) !important;
+}
+
+/* Override any pattern background images */
+.mxd-pattern__bg,
+.pattern-bg {
+    background-image: url(../img/m/pixnova-c623a8f8497bdbe54cf8d316a7cb4178.jpg) !important;
+}
+
+/* Override any texture background images */
+.mxd-texture__bg,
+.texture-bg {
+    background-image: url(../img/m/pixnova-ca7cec4e13cdba7241878194760c7f9a.jpg) !important;
+}
+
+/* Override any noise background images */
+.mxd-noise__bg,
+.noise-bg {
+    background-image: url(../img/m/pixnova-eb3740b47e175e0d898fba96765368c6.jpg) !important;
+}
+
+/* Override any blur background images */
+.mxd-blur__bg,
+.blur-bg {
+    background-image: url(../img/m/pixnova-ec91c8004821a57384e4dbbeec5d34b9.jpg) !important;
+}
+
+/* Override any sharp background images */
+.mxd-sharp__bg,
+.sharp-bg {
+    background-image: url(../img/m/pixnova-ee7c7e56a6105cc1b517faf01f3ba4ee.jpg) !important;
+}
+
+/* Override any smooth background images */
+.mxd-smooth__bg,
+.smooth-bg {
+    background-image: url(../img/m/pixnova-f24b11dbd4a15704baa550439fdd8704.jpg) !important;
+}
+
+/* Override any rough background images */
+.mxd-rough__bg,
+.rough-bg {
+    background-image: url(../img/m/pixnova-f3071f230ae41ca568db9c5924cb4062.jpg) !important;
+}
+
+/* Override any glossy background images */
+.mxd-glossy__bg,
+.glossy-bg {
+    background-image: url(../img/m/pixnova-f71071b202dab4bad79b96ce610ea22f.jpg) !important;
+}
+
+/* Override any matte background images */
+.mxd-matte__bg,
+.matte-bg {
+    background-image: url(../img/m/pixnova-f9fcb89e0972852a11aaaf094c546124.jpg) !important;
+}

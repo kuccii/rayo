@@ -181,12 +181,17 @@
    and maintain brand consistency with the water treatment theme.
    ============================================================================ */
 
-/* Main hero titles with water gradient */
+/* Main hero titles with water gradient - ALL VARIATIONS */
 .hero-title,
 .hero__title,
 .mxd-hero__title,
 h1.hero-title,
-h1.hero__title {
+h1.hero__title,
+.hero-01-title,
+.hero-04-title,
+.hero-05-title,
+.hero-00-title,
+.inner-headline__title.hero-title {
     background: linear-gradient(135deg, var(--accent--light) 0%, var(--additional--light) 50%, var(--kilitek-green) 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
@@ -388,6 +393,200 @@ h3.subsection__title {
 }
 
 /* ============================================================================
+   HERO TITLE COLORING
+   ============================================================================
+   Add gradient colors to the main hero title for better visual impact
+   ============================================================================ */
+
+/* Hero title gradient styling - matches website color scheme - ALL VARIATIONS */
+.hero-05-title,
+.hero-01-title,
+.hero-04-title,
+.hero-00-title {
+    background: linear-gradient(135deg, var(--accent--light) 0%, var(--additional--light) 50%, var(--kilitek-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    background-size: 200% 200%;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+/* Gradient animation for hero title */
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Individual title items styling - matches website colors - ALL VARIATIONS */
+.hero-05-title__item,
+.hero-01-title__item,
+.hero-04-title__item,
+.hero-00-title__item {
+    background: linear-gradient(135deg, var(--accent--light) 0%, var(--additional--light) 50%, var(--kilitek-green) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+/* SVG icon styling within title - matches website accent color - ALL VARIATIONS */
+.hero-05-title__item.title-item-image svg,
+.hero-01-title__item.title-item-image svg,
+.hero-04-title__item.title-item-image svg,
+.hero-00-title__item.title-item-image svg {
+    fill: var(--accent--light);
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0 0.3em;
+    vertical-align: middle;
+}
+
+/* Hover effects for title items - matches website hover colors - ALL VARIATIONS */
+.hero-05-title__item:hover,
+.hero-01-title__item:hover,
+.hero-04-title__item:hover,
+.hero-00-title__item:hover {
+    background: linear-gradient(135deg, var(--kilitek-dark-blue) 0%, var(--accent--light) 50%, var(--additional--light) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+/* ============================================================================
+   COMPREHENSIVE COLOR CONSISTENCY ACROSS ALL PAGES
+   ============================================================================
+   Ensure all interactive elements, links, and UI components use consistent
+   Kilitek branding colors across all pages.
+   ============================================================================ */
+
+/* Links and interactive elements */
+a {
+    color: var(--accent--light) !important;
+    transition: all 0.3s ease !important;
+}
+
+a:hover {
+    color: var(--additional--light) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Form elements */
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--accent--light) !important;
+    box-shadow: 0 0 0 0.2rem rgba(0, 119, 190, 0.25) !important;
+}
+
+/* Navigation elements */
+.nav-link,
+.menu-link {
+    color: var(--t-bright) !important;
+    transition: all 0.3s ease !important;
+}
+
+.nav-link:hover,
+.menu-link:hover {
+    color: var(--accent--light) !important;
+}
+
+/* Card hover effects */
+.card:hover,
+.service-card:hover,
+.project-card:hover {
+    border-color: var(--accent--light) !important;
+    box-shadow: 0 8px 25px rgba(0, 119, 190, 0.15) !important;
+    transform: translateY(-5px) !important;
+}
+
+/* Badge and tag elements */
+.badge,
+.tag {
+    background: rgba(0, 119, 190, 0.1) !important;
+    color: var(--accent--light) !important;
+    border: 1px solid var(--accent--light) !important;
+}
+
+.badge:hover,
+.tag:hover {
+    background: var(--accent--light) !important;
+    color: white !important;
+}
+
+/* Progress bars and indicators */
+.progress-bar {
+    background: linear-gradient(90deg, var(--accent--light), var(--additional--light)) !important;
+}
+
+/* Table elements */
+th {
+    color: var(--accent--light) !important;
+    font-weight: 600 !important;
+}
+
+/* Alert and notification elements */
+.alert-info {
+    background: rgba(0, 119, 190, 0.1) !important;
+    border-color: var(--accent--light) !important;
+    color: var(--accent--light) !important;
+}
+
+/* Breadcrumb elements */
+.breadcrumb a {
+    color: var(--additional--light) !important;
+}
+
+.breadcrumb a:hover {
+    color: var(--accent--light) !important;
+}
+
+/* Pagination elements */
+.pagination .page-link {
+    color: var(--accent--light) !important;
+    border-color: var(--accent--light) !important;
+}
+
+.pagination .page-link:hover {
+    background: var(--accent--light) !important;
+    color: white !important;
+}
+
+.pagination .page-item.active .page-link {
+    background: var(--accent--light) !important;
+    border-color: var(--accent--light) !important;
+}
+
+/* Dropdown elements */
+.dropdown-menu {
+    border-color: var(--accent--light) !important;
+}
+
+.dropdown-item:hover {
+    background: rgba(0, 119, 190, 0.1) !important;
+    color: var(--accent--light) !important;
+}
+
+/* Modal elements */
+.modal-header {
+    border-bottom-color: var(--accent--light) !important;
+}
+
+.modal-footer {
+    border-top-color: var(--accent--light) !important;
+}
+
+/* Tooltip elements */
+.tooltip .tooltip-inner {
+    background: var(--accent--light) !important;
+}
+
+.tooltip .arrow::before {
+    border-top-color: var(--accent--light) !important;
+}
+
+/* ============================================================================
    ADDITIONAL BACKGROUND IMAGE OVERRIDES
    ============================================================================
    Override any remaining external background images from the minified CSS
@@ -397,6 +596,33 @@ h3.subsection__title {
 /* Override any external background images that might be in the minified CSS */
 [style*="background-image: url(https://mixdesign.dev/themeforest/rayo/"] {
     background-image: url(../img/m/pixnova-04a8795a4adbf6ad65198422c04d4204.jpg) !important;
+}
+
+/* ============================================================================
+   BLOG PREVIEW CARD BACKGROUND IMAGES - LOCAL IMAGES FROM M/ FOLDER
+   ============================================================================ */
+/* Blog preview card 1 - Water treatment technology */
+.blog-preview-image-1 {
+    background-image: url(../img/m/pixnova-f24b11dbd4a15704baa550439fdd8704.jpg) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Blog preview card 2 - RO system technology */
+.blog-preview-image-2 {
+    background-image: url(../img/m/pixnova-f3071f230ae41ca568db9c5924cb4062.jpg) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Blog preview card 3 - Water filtration system */
+.blog-preview-image-3 {
+    background-image: url(../img/m/pixnova-f71071b202dab4bad79b96ce610ea22f.jpg) !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
 }
 
 /* Specific overrides for common background image classes */

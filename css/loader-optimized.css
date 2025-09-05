@@ -1,0 +1,122 @@
+/* Optimized Loader CSS for Kilitek Website
+ * Lightweight and fast-loading loader styles
+ */
+
+/* Loader Container */
+.loader {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background: var(--base, #FAF7F6);
+    transition: opacity 0.3s ease-out;
+}
+
+.loader.loaded {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+/* Loader Wrapper */
+.loader__wrapper {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--base, #FAF7F6);
+    color: var(--t-bright, #161616);
+}
+
+/* Loader Content */
+.loader__content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 2;
+    color: var(--t-bright, #161616);
+    overflow: hidden;
+}
+
+/* Loader Count */
+.loader__count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    line-height: 1;
+}
+
+.loader__count span {
+    display: inline-flex;
+    font-family: var(--_font-accent, "Funnel Display", sans-serif);
+    font-weight: var(--fw-medium, 600);
+    font-size: 4rem;
+    letter-spacing: -0.06rem;
+    color: var(--t-bright, #161616);
+    transition: all 0.1s ease;
+}
+
+/* Responsive font sizes */
+@media only screen and (min-width: 768px) {
+    .loader__count span {
+        font-size: 6rem;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .loader__count span {
+        font-size: 8rem;
+    }
+}
+
+@media only screen and (min-width: 1600px) {
+    .loader__count span {
+        font-size: 10rem;
+    }
+}
+
+/* Loading animations */
+.loading__item {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease-out;
+}
+
+.loading__fade {
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+}
+
+/* Optimized loading wrap */
+.loading-wrap {
+    opacity: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+/* Performance optimizations */
+.loader * {
+    will-change: transform, opacity;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .loader__count span {
+        transition: none;
+    }
+    
+    .loading__item,
+    .loading__fade {
+        transition: none;
+    }
+}
+

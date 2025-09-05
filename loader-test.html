@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loader Performance Test - Kilitek</title>
+    <link rel="stylesheet" href="css/loader-optimized.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-results {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f5e8;
+            border-radius: 4px;
+            border-left: 4px solid #4caf50;
+        }
+        .performance-metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .metric {
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        .metric-label {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Loader Performance Test</h1>
+        <p>This page tests the optimized loader performance for the Kilitek website.</p>
+        
+        <div class="test-results" id="test-results" style="display: none;">
+            <h3>Performance Results</h3>
+            <div class="performance-metrics">
+                <div class="metric">
+                    <div class="metric-value" id="load-time">-</div>
+                    <div class="metric-label">Load Time (ms)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="loader-duration">-</div>
+                    <div class="metric-label">Loader Duration (ms)</div>
+                </div>
+                <div class="metric">
+                    <div class="metric-value" id="performance-score">-</div>
+                    <div class="metric-label">Performance Score</div>
+                </div>
+            </div>
+        </div>
+        
+        <button onclick="runTest()" style="padding: 10px 20px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">
+            Run Performance Test
+        </button>
+    </div>
+
+    <!-- Loader for testing -->
+    <div id="loader" class="loader">
+        <div class="loader__wrapper">
+            <div class="loader__content">
+                <div class="loader__count">
+                    <span class="count__text">0</span>
+                    <span class="count__percent">%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/loader-optimized.js"></script>
+    <script>
+        let startTime, loaderStartTime, loaderEndTime;
+        
+        function runTest() {
+            // Reset loader
+            const loader = document.getElementById('loader');
+            loader.style.display = 'block';
+            loader.style.opacity = '1';
+            loader.classList.remove('loaded');
+            
+            // Reset count
+            const countText = document.querySelector('.count__text');
+            countText.textContent = '0';
+            
+            // Start timing
+            startTime = performance.now();
+            loaderStartTime = startTime;
+            
+            // Show loader
+            loader.style.display = 'block';
+            
+            // Override the loader script for testing
+            let progress = 0;
+            const targetProgress = 100;
+            const increment = 2;
+            const interval = 16;
+            
+            const progressInterval = setInterval(() => {
+                progress += increment;
+                
+                if (progress >= targetProgress) {
+                    progress = targetProgress;
+                    clearInterval(progressInterval);
+                    
+                    countText.textContent = '100';
+                    loaderEndTime = performance.now();
+                    
+                    setTimeout(() => {
+                        loader.style.opacity = '0';
+                        loader.style.transition = 'opacity 0.3s ease-out';
+                        
+                        setTimeout(() => {
+                            loader.style.display = 'none';
+                            loader.classList.add('loaded');
+                            
+                            // Calculate and display results
+                            const totalTime = performance.now() - startTime;
+                            const loaderDuration = loaderEndTime - loaderStartTime;
+                            const performanceScore = Math.max(0, 100 - (totalTime / 10));
+                            
+                            document.getElementById('load-time').textContent = Math.round(totalTime);
+                            document.getElementById('loader-duration').textContent = Math.round(loaderDuration);
+                            document.getElementById('performance-score').textContent = Math.round(performanceScore);
+                            document.getElementById('test-results').style.display = 'block';
+                        }, 300);
+                    }, 200);
+                } else {
+                    countText.textContent = Math.floor(progress);
+                }
+            }, interval);
+        }
+        
+        // Auto-run test on page load
+        window.addEventListener('load', () => {
+            setTimeout(runTest, 1000);
+        });
+    </script>
+</body>
+</html>
+
